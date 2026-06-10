@@ -20,6 +20,10 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
 
         <local:TabRowControl x:Name="TabRow"
                              Grid.Row="0"
@@ -58,12 +62,18 @@
 
         <Grid x:Name="TabContent"
               Grid.Row="2"
+              Grid.Column="0"
               HorizontalAlignment="Stretch"
               VerticalAlignment="Stretch">
             <Grid.Background>
                 <ImageBrush />
             </Grid.Background>
         </Grid>
+
+        <local:FileBrowserPane x:Name="FileBrowserPane"
+                               Grid.Row="2"
+                               Grid.Column="1"
+                               Visibility="Collapsed" />
 
         <!--
             GH#12775 et. al: After switching to ControlsV2, it seems that
