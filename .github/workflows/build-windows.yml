@@ -24,9 +24,9 @@ jobs:
 
     - name: Restore NuGet packages
       run: |
+        nuget restore dep/nuget/packages.config -PackagesDirectory packages
+        nuget restore build/packages.config -PackagesDirectory packages
         nuget restore Scratch.sln
-        nuget restore src/types/lib/types.vcxproj -PackagesDirectory packages
-        nuget restore scratch/ScratchIslandApp/SampleApp/SampleAppLib.vcxproj -PackagesDirectory packages
 
     - name: Build solution
       run: |
