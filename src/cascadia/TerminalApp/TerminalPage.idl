@@ -64,6 +64,7 @@ namespace TerminalApp
 
         WindowProperties WindowProperties { get; };
         void IdentifyWindow();
+        void ToggleFileBrowser();
 
         String SavedActionName { get; };
         String SavedActionKeyChord { get; };

@@ -238,6 +238,7 @@ namespace winrt::TerminalApp::implementation
         Windows::UI::Xaml::Controls::Grid _tabContent{ nullptr };
         Microsoft::UI::Xaml::Controls::SplitButton _newTabButton{ nullptr };
         winrt::TerminalApp::ColorPickupFlyout _tabColorPicker{ nullptr };
+        TerminalApp::FileBrowserPane _fileBrowserPane{ nullptr };
 
         Microsoft::Terminal::Settings::Model::CascadiaSettings _settings{ nullptr };
 
@@ -254,6 +255,7 @@ namespace winrt::TerminalApp::implementation
         bool _isMaximized{ false };
         bool _isAlwaysOnTop{ false };
         bool _showTabsFullscreen{ false };
+        bool _fileBrowserVisible{ false };
 
         std::optional<uint32_t> _loadFromPersistedLayoutIdx{};
 

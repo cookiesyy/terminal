@@ -4734,6 +4734,26 @@ namespace winrt::TerminalApp::implementation
         }
     }
 
+    void TerminalPage::ToggleFileBrowser()
+    {
+        _fileBrowserVisible = !_fileBrowserVisible;
+
+        if (_fileBrowserVisible)
+        {
+            FileBrowserPane().Visibility(Windows::UI::Xaml::Visibility::Visible);
+
+            wchar_t path[MAX_PATH];
+            if (SUCCEEDED(SHGetFolderPathW(NULL, CSIDL_PROFILE, NULL, 0, path)))
+            {
+                FileBrowserPane().ViewModel().LoadDirectory(winrt::hstring{ path });
+            }
+        }
+        else
+        {
+            FileBrowserPane().Visibility(Windows::UI::Xaml::Visibility::Collapsed);
+        }
+    }
+
     void TerminalPage::ShowTerminalWorkingDirectory()
     {
         // If we haven't ever loaded the TeachingTip, then do so now and
