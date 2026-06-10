@@ -1,0 +1,21 @@
+namespace TerminalApp
+{
+    runtimeclass FileItem
+    {
+        String Name { get; };
+        String Path { get; };
+        Boolean IsDirectory { get; };
+        UInt64 Size { get; };
+        String SizeDisplay { get; };
+    };
+
+    runtimeclass FileBrowserViewModel
+    {
+        FileBrowserViewModel();
+        Windows.Foundation.Collections.IObservableVector<FileItem> FileList { get; };
+        String CurrentPath { get; };
+        void LoadDirectory(String path);
+        void OpenFile(String filePath);
+        void NavigateUp();
+    };
+}
