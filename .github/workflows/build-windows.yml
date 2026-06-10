@@ -23,10 +23,10 @@ jobs:
       uses: nuget/setup-nuget@v1
 
     - name: Restore NuGet packages
-      run: nuget restore OpenConsole.sln
+      run: nuget restore Scratch.sln
 
     - name: Build solution
-      run: msbuild OpenConsole.sln /p:Configuration=Release /p:Platform=x64 /m
+      run: msbuild Scratch.sln /p:Configuration=Release /p:Platform=x64 /m
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
