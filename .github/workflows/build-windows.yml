@@ -25,8 +25,16 @@ jobs:
     - name: Restore NuGet packages
       run: nuget restore Scratch.sln
 
+    - name: Retarget solution to available SDK
+      run: |
+        $sdkVersion = (Get-ChildItem "C:\Program Files (x86)\Windows Kits\10\Include" | Sort-Object Name -Descending | Select-Object -First 1).Name
+        Write-Host "Using Windows SDK version: $sdkVersion"
+        msbuild Scratch.sln /t:RestorePackages /p:Configuration=Release /p:Platform=x64 /p:WindowsTargetPlatformVersion=$sdkVersion
+
     - name: Build solution
-      run: msbuild Scratch.sln /p:Configuration=Release /p:Platform=x64 /m
+      run: |
+        $sdkVersion = (Get-ChildItem "C:\Program Files (x86)\Windows Kits\10\Include" | Sort-Object Name -Descending | Select-Object -First 1).Name
+        msbuild Scratch.sln /p:Configuration=Release /p:Platform=x64 /p:WindowsTargetPlatformVersion=$sdkVersion /m
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
