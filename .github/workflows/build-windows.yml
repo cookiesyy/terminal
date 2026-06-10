@@ -1,0 +1,37 @@
+name: Build Windows Terminal
+
+on:
+  push:
+    branches: [ feature/sidebar-file-browser ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.1
+
+    - name: Setup NuGet
+      uses: nuget/setup-nuget@v1
+
+    - name: Restore NuGet packages
+      run: nuget restore OpenConsole.sln
+
+    - name: Build solution
+      run: msbuild OpenConsole.sln /p:Configuration=Release /p:Platform=x64 /m
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: WindowsTerminal-x64-Release
+        path: |
+          src/cascadia/CascadiaPackage/bin/x64/Release/
+          !**/*.pdb
