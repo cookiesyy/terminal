@@ -23,11 +23,13 @@ jobs:
       uses: nuget/setup-nuget@v1
 
     - name: Restore NuGet packages
-      run: nuget restore Scratch.sln
+      run: |
+        nuget restore Scratch.sln
+        nuget restore src/types/lib/types.vcxproj -PackagesDirectory packages
+        nuget restore scratch/ScratchIslandApp/SampleApp/SampleAppLib.vcxproj -PackagesDirectory packages
 
     - name: Build solution
       run: |
-        msbuild Scratch.sln /t:Restore /p:Configuration=Release /p:Platform=x64 /p:WindowsTargetPlatformVersion=10.0.26100.0
         msbuild Scratch.sln /p:Configuration=Release /p:Platform=x64 /p:WindowsTargetPlatformVersion=10.0.26100.0 /m
 
     - name: Upload artifacts
