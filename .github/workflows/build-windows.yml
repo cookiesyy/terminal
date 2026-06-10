@@ -30,7 +30,7 @@ jobs:
 
     - name: Build solution
       run: |
-        msbuild Scratch.sln /p:Configuration=Release /p:Platform=x64 /p:WindowsTargetPlatformVersion=10.0.26100.0 /m
+        msbuild Scratch.sln /p:Configuration=Release /p:Platform=x64 /p:WindowsTargetPlatformVersion=10.0.26100.0 /p:PlatformToolset=v180 /m
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
