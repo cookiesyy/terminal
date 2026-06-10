@@ -68,6 +68,9 @@
     <Page Include="ColorPickupFlyout.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="FileBrowserPane.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="CommandPalette.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -145,6 +148,12 @@
     </ClInclude>
     <ClInclude Include="AboutDialog.h">
       <DependentUpon>AboutDialog.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="FileBrowserPane.h">
+      <DependentUpon>FileBrowserPane.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="FileBrowserViewModel.h">
+      <DependentUpon>FileBrowserViewModel.idl</DependentUpon>
     </ClInclude>
     <ClInclude Include="App.h">
       <DependentUpon>App.xaml</DependentUpon>
@@ -259,6 +268,12 @@
     <ClCompile Include="AboutDialog.cpp">
       <DependentUpon>AboutDialog.xaml</DependentUpon>
     </ClCompile>
+    <ClCompile Include="FileBrowserPane.cpp">
+      <DependentUpon>FileBrowserPane.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="FileBrowserViewModel.cpp">
+      <DependentUpon>FileBrowserViewModel.idl</DependentUpon>
+    </ClCompile>
     <ClCompile Include="App.cpp">
       <DependentUpon>App.xaml</DependentUpon>
     </ClCompile>
@@ -306,6 +321,10 @@
     <Midl Include="AboutDialog.idl">
       <DependentUpon>AboutDialog.xaml</DependentUpon>
     </Midl>
+    <Midl Include="FileBrowserPane.idl">
+      <DependentUpon>FileBrowserPane.xaml</DependentUpon>
+    </Midl>
+    <Midl Include="FileBrowserViewModel.idl" />
     <Midl Include="App.idl">
       <DependentUpon>App.xaml</DependentUpon>
     </Midl>
