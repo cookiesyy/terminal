@@ -132,6 +132,18 @@
                         </ResourceDictionary>
                     </mux:SplitButton.Resources>
                 </mux:SplitButton>
+
+                <Button x:Name="FileBrowserButton"
+                        Height="24"
+                        Margin="4,4,0,4"
+                        Padding="8,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Stretch"
+                        BorderThickness="0"
+                        Click="FileBrowserButton_Click"
+                        Content="📁"
+                        FontSize="14"
+                        ToolTipService.ToolTip="文件浏览器" />
             </Grid>
         </mux:TabView.TabStripFooter>
 

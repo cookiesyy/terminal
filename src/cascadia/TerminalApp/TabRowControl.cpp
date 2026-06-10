@@ -33,6 +33,27 @@ namespace winrt::TerminalApp::implementation
     {
     }
 
+    void TabRowControl::FileBrowserButton_Click(const IInspectable&, const RoutedEventArgs&)
+    {
+        auto parent = this->Parent();
+        while (parent)
+        {
+            if (auto page = parent.try_as<TerminalApp::TerminalPage>())
+            {
+                page.ToggleFileBrowser();
+                return;
+            }
+            if (auto fe = parent.try_as<FrameworkElement>())
+            {
+                parent = fe.Parent();
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+
     // Method Description:
     // - Bound in Drag&Drop of the Xaml editor to the [+] button.
     // Arguments:
