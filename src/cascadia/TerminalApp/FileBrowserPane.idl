@@ -1,3 +1,5 @@
+import "FileBrowserViewModel.idl";
+
 namespace TerminalApp
 {
     [default_interface] runtimeclass FileBrowserPane : Windows.UI.Xaml.Controls.UserControl
