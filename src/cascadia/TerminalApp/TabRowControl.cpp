@@ -33,7 +33,7 @@ namespace winrt::TerminalApp::implementation
     {
     }
 
-    void TabRowControl::FileBrowserButton_Click(const IInspectable&, const RoutedEventArgs&)
+    void TabRowControl::FileBrowserButton_Click(const IInspectable&, const Windows::UI::Xaml::RoutedEventArgs&)
     {
         auto parent = this->Parent();
         while (parent)
