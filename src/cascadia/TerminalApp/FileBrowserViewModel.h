@@ -1,4 +1,5 @@
 #pragma once
+#include "FileItem.g.h"
 #include "FileBrowserViewModel.g.h"
 #include <filesystem>
 
@@ -38,6 +39,6 @@ namespace winrt::TerminalApp::implementation
         winrt::hstring _currentPath;
 
         std::vector<TerminalApp::FileItem> _LoadDirectoryImpl(const std::wstring& path);
-        winrt::hstring _FormatFileSize(uint64_t bytes);
+        static winrt::hstring _FormatFileSize(uint64_t bytes);
     };
 }

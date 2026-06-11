@@ -1,0 +1,92 @@
+<h2>点击文件后做什么？</h2>
+<p class="subtitle">在侧边栏点击文件名，接下来干啥？</p>
+
+<div class="options">
+  <div class="option" data-choice="editor" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>打开系统默认编辑器</h3>
+      <p>用notepad/vim/code等打开文件编辑</p>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>利用现有编辑器功能</li>
+            <li>实现简单</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>需要跳出终端</li>
+            <li>编辑体验分离</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="terminal" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>在终端输入文件路径（推荐）</h3>
+      <p>点击后自动在终端命令行填入文件路径，用户可以继续输入命令</p>
+      <div class="mockup" style="margin-top: 12px; padding: 12px;">
+        <div style="background: #1e1e1e; padding: 8px; font-family: monospace; font-size: 11px; color: #d4d4d4;">
+          <span style="color: #4ec9b0;">用户点击侧边栏的</span> config.json<br/><br/>
+          <span style="color: #569cd6;">↓ 自动填入终端</span><br/><br/>
+          $ ./config.json<span style="opacity: 0.5;">█</span><br/>
+          <span style="color: #888;">← 用户可继续输入: cat, vim, code 等命令</span>
+        </div>
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>不打断终端工作流</li>
+            <li>灵活性高，可配合任何命令</li>
+            <li>符合终端使用习惯</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>需要用户补充命令</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="cd" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>自动执行cd命令（仅文件夹）</h3>
+      <p>点击文件夹自动cd进入，点击文件执行cat查看内容</p>
+      <div class="mockup" style="margin-top: 12px; padding: 12px;">
+        <div style="background: #1e1e1e; padding: 8px; font-family: monospace; font-size: 11px; color: #d4d4d4;">
+          $ <span style="opacity: 0.5;">█</span><br/>
+          <span style="color: #888;">← 点击文件夹 src/</span><br/><br/>
+          $ cd src<br/>
+          <span style="color: #4ec9b0;">/home/project/src</span> $ <span style="opacity: 0.5;">█</span>
+        </div>
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>导航快速</li>
+            <li>自动化程度高</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>强制执行命令，可能不是用户想要的</li>
+            <li>文件和文件夹行为不一致</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,129 @@
+<h2>怎么选择要预览的文件？</h2>
+<p class="subtitle">用户在终端里操作，如何告诉侧边栏显示哪个文件？</p>
+
+<div class="options">
+  <div class="option" data-choice="click" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>点击文件名触发</h3>
+      <p>在终端输出里点击文件路径，自动在侧边栏预览</p>
+      <div class="mockup" style="margin-top: 12px; padding: 12px;">
+        <div style="background: #1e1e1e; padding: 8px; font-family: monospace; font-size: 11px; color: #d4d4d4;">
+          $ ls -la<br/>
+          <span style="color: #4ec9b0;">-rw-r--r--</span> 1 user group 2048 Jun 10 <span style="color: #569cd6; text-decoration: underline; cursor: pointer;">README.md</span> ← 点击这里<br/>
+          <span style="color: #4ec9b0;">-rw-r--r--</span> 1 user group 1024 Jun 10 <span style="color: #569cd6;">config.json</span>
+        </div>
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>直观，所见即所得</li>
+            <li>不需要记命令</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>需要识别终端输出中的文件路径</li>
+            <li>实现复杂度较高</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="command" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>专用命令触发（推荐）</h3>
+      <p>输入 <code>preview 文件名</code> 或 <code>pv 文件名</code></p>
+      <div class="mockup" style="margin-top: 12px; padding: 12px;">
+        <div style="background: #1e1e1e; padding: 8px; font-family: monospace; font-size: 11px; color: #d4d4d4;">
+          $ pv README.md<br/>
+          <span style="color: #4ec9b0;">✓ Preview: README.md</span><br/>
+          $ pv config.json<br/>
+          <span style="color: #4ec9b0;">✓ Preview: config.json</span>
+        </div>
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>实现简单可靠</li>
+            <li>明确的用户意图</li>
+            <li>支持Tab自动补全</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>需要手动输入命令</li>
+            <li>多一个步骤</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="auto" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>自动跟随当前目录</h3>
+      <p>cd到某个目录后，自动列出该目录文件列表供选择</p>
+      <div class="mockup" style="margin-top: 12px; padding: 12px;">
+        <div style="display: flex; gap: 2px; height: 100px;">
+          <div style="flex: 1; background: #1e1e1e; padding: 8px; font-family: monospace; font-size: 11px; color: #d4d4d4;">
+            $ cd /home/project<br/>
+            $ ls
+          </div>
+          <div style="flex: 0 0 150px; background: #2d2d30; padding: 8px; font-size: 11px; color: #ccc;">
+            <strong>/home/project</strong><br/>
+            📄 README.md<br/>
+            📄 config.json<br/>
+            📁 src/
+          </div>
+        </div>
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>自动化程度高</li>
+            <li>实时同步</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>可能不是用户想要的</li>
+            <li>性能开销较大</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="combo" onclick="toggleSelect(this)">
+    <div class="letter">D</div>
+    <div class="content">
+      <h3>组合方式</h3>
+      <p>命令触发(B) + 自动目录列表(C)</p>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>兼顾命令行和可视化</li>
+            <li>灵活度最高</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>开发成本最高</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

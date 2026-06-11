@@ -1,0 +1,98 @@
+<h2>侧边栏的宽度如何控制？</h2>
+<p class="subtitle">侧边栏太窄看不清，太宽又占地方</p>
+
+<div class="options">
+  <div class="option" data-choice="fixed" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>固定宽度</h3>
+      <p>设定固定宽度，例如 250px 或 300px</p>
+      <div class="mockup" style="margin-top: 12px; padding: 12px;">
+        <div style="display: flex; gap: 2px; height: 100px;">
+          <div style="flex: 1; background: #1e1e1e; display: flex; align-items: center; justify-content: center; color: #666;">终端区域（自适应）</div>
+          <div style="flex: 0 0 200px; background: #252526; display: flex; align-items: center; justify-content: center; color: #888; font-size: 11px;">文件浏览器<br/>250px固定</div>
+        </div>
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>实现简单</li>
+            <li>布局稳定</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>不灵活</li>
+            <li>大屏浪费，小屏拥挤</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="resizable" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>可拖拽调整（推荐）</h3>
+      <p>鼠标拖拽边缘调整宽度，记住用户设置</p>
+      <div class="mockup" style="margin-top: 12px; padding: 12px;">
+        <div style="display: flex; gap: 2px; height: 100px;">
+          <div style="flex: 1; background: #1e1e1e; display: flex; align-items: center; justify-content: center; color: #666;">终端区域</div>
+          <div style="width: 3px; background: #007acc; cursor: ew-resize; position: relative;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #007acc; font-size: 14px;">⋮</div>
+          </div>
+          <div style="flex: 0 0 200px; background: #252526; display: flex; align-items: center; justify-content: center; color: #888; font-size: 11px;">文件浏览器<br/>← 拖我调整</div>
+        </div>
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>灵活自定义</li>
+            <li>适配不同屏幕</li>
+            <li>用户体验好</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>实现成本稍高</li>
+            <li>需要保存用户设置</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="percent" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>固定比例</h3>
+      <p>占窗口宽度的固定百分比，例如 20% 或 25%</p>
+      <div class="mockup" style="margin-top: 12px; padding: 12px;">
+        <div style="display: flex; gap: 2px; height: 100px;">
+          <div style="flex: 0 0 75%; background: #1e1e1e; display: flex; align-items: center; justify-content: center; color: #666;">终端区域（75%）</div>
+          <div style="flex: 0 0 25%; background: #252526; display: flex; align-items: center; justify-content: center; color: #888; font-size: 11px;">文件浏览器<br/>25%宽度</div>
+        </div>
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>响应式，适配不同屏幕</li>
+            <li>实现简单</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>小窗口下侧边栏可能过窄</li>
+            <li>不够灵活</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

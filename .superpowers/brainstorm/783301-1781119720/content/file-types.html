@@ -1,0 +1,62 @@
+<h2>侧边栏里预览哪些文件？</h2>
+<p class="subtitle">艹，不是所有文件都适合预览，咱们得定个范围</p>
+
+<div class="options" data-multiselect>
+  <div class="option" data-choice="text" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>文本文件</h3>
+      <p>.txt, .log, .md, .json, .xml, .yaml 等</p>
+      <p class="label" style="margin-top: 8px;">必选项，这是最基础的</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="code" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>代码文件</h3>
+      <p>.py, .js, .cpp, .java, .go, .rs, .sh 等</p>
+      <p class="label" style="margin-top: 8px;">带语法高亮会更爽</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="image" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>图片文件</h3>
+      <p>.png, .jpg, .gif, .svg, .bmp 等</p>
+      <p class="label" style="margin-top: 8px;">显示缩略图预览</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="pdf" onclick="toggleSelect(this)">
+    <div class="letter">D</div>
+    <div class="content">
+      <h3>PDF文档</h3>
+      <p>显示PDF第一页或多页预览</p>
+      <p class="label" style="margin-top: 8px;">实现成本较高</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="binary" onclick="toggleSelect(this)">
+    <div class="letter">E</div>
+    <div class="content">
+      <h3>二进制文件信息</h3>
+      <p>.exe, .dll, .so - 显示文件大小、类型、修改时间等元信息</p>
+      <p class="label" style="margin-top: 8px;">不预览内容，只显示属性</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="archive" onclick="toggleSelect(this)">
+    <div class="letter">F</div>
+    <div class="content">
+      <h3>压缩包内容</h3>
+      <p>.zip, .tar, .gz - 显示压缩包内文件列表</p>
+      <p class="label" style="margin-top: 8px;">方便查看压缩包结构</p>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 24px; padding: 16px; background: rgba(255, 193, 7, 0.1); border-left: 3px solid #ffc107;">
+  <p style="margin: 0; color: #ffc107;"><strong>提示：</strong>这是多选题！可以选多个，点击切换选中/取消</p>
+</div>

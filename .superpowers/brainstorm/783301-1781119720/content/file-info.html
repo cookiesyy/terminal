@@ -1,0 +1,70 @@
+<h2>侧边栏显示哪些文件信息？</h2>
+<p class="subtitle">文件列表里除了文件名，还显示啥？</p>
+
+<div class="options" data-multiselect>
+  <div class="option" data-choice="name" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>文件名 + 图标</h3>
+      <p>基础必备：文件/文件夹名称 + 对应图标</p>
+      <div class="mockup" style="margin-top: 12px; padding: 8px; background: #252526;">
+        <div style="font-family: monospace; font-size: 11px; color: #ccc;">
+          📁 src<br/>
+          📁 build<br/>
+          📄 README.md<br/>
+          📄 config.json
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="size" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>文件大小</h3>
+      <p>显示文件大小（2.5KB, 1.2MB等）</p>
+      <div class="mockup" style="margin-top: 12px; padding: 8px; background: #252526;">
+        <div style="font-family: monospace; font-size: 11px; color: #ccc;">
+          📄 README.md <span style="color: #888; float: right;">2.5KB</span><br/>
+          📄 config.json <span style="color: #888; float: right;">1.2KB</span><br/>
+          📄 main.cpp <span style="color: #888; float: right;">15.8KB</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="time" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>修改时间</h3>
+      <p>显示最后修改时间</p>
+      <div class="mockup" style="margin-top: 12px; padding: 8px; background: #252526;">
+        <div style="font-family: monospace; font-size: 10px; color: #ccc;">
+          📄 README.md<br/>
+          <span style="color: #888; margin-left: 20px;">Jun 10 14:30</span><br/>
+          📄 config.json<br/>
+          <span style="color: #888; margin-left: 20px;">Jun 09 18:25</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="permission" onclick="toggleSelect(this)">
+    <div class="letter">D</div>
+    <div class="content">
+      <h3>权限信息</h3>
+      <p>显示文件权限（rwx, 755等）</p>
+      <div class="mockup" style="margin-top: 12px; padding: 8px; background: #252526;">
+        <div style="font-family: monospace; font-size: 11px; color: #ccc;">
+          📄 README.md <span style="color: #888;">rw-r--r--</span><br/>
+          📄 run.sh <span style="color: #4ec9b0;">rwxr-xr-x</span><br/>
+          📄 config.json <span style="color: #888;">rw-r--r--</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 24px; padding: 16px; background: rgba(255, 193, 7, 0.1); border-left: 3px solid #ffc107;">
+  <p style="margin: 0; color: #ffc107;"><strong>提示：</strong>多选题！选择你需要显示的信息，信息越多占用空间越大</p>
+</div>

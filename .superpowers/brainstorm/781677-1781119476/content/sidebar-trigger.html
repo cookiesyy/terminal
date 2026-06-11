@@ -1,0 +1,99 @@
+<h2>侧边栏如何触发打开？</h2>
+<p class="subtitle">艹，咱们先定个基础交互方式，别搞得太复杂</p>
+
+<div class="options">
+  <div class="option" data-choice="keybind" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>快捷键触发</h3>
+      <p>按 Ctrl+E 或自定义快捷键快速打开/关闭侧边栏</p>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>键盘党友好，操作快</li>
+            <li>不占用屏幕空间</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>需要记快捷键</li>
+            <li>新手可能找不到</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="button" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>工具栏按钮</h3>
+      <p>标题栏或标签栏旁边加个按钮，点击打开侧边栏</p>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>一目了然，容易发现</li>
+            <li>鼠标用户友好</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>占用标题栏空间</li>
+            <li>需要鼠标操作</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="hover" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>边缘悬停触发</h3>
+      <p>鼠标移到窗口右边缘自动显示侧边栏（类似VS Code）</p>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>零学习成本</li>
+            <li>不占UI空间</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>可能误触发</li>
+            <li>触摸屏不友好</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="combo" onclick="toggleSelect(this)">
+    <div class="letter">D</div>
+    <div class="content">
+      <h3>组合方式（推荐）</h3>
+      <p>快捷键 + 按钮，两种方式都支持</p>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>兼顾键盘和鼠标用户</li>
+            <li>灵活度最高</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>实现成本稍高</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -12,8 +12,7 @@ namespace winrt::TerminalApp::implementation
     {
         if (!isDir)
         {
-            auto vm = winrt::make<FileBrowserViewModel>();
-            _sizeDisplay = vm._FormatFileSize(size);
+            _sizeDisplay = FileBrowserViewModel::_FormatFileSize(size);
         }
         else
         {

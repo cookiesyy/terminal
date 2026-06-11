@@ -1,0 +1,80 @@
+<h2>Windows Terminal 侧边栏文件浏览器 - 需求总结</h2>
+<p class="subtitle">老王我把你的需求整理出来了，看看对不对</p>
+
+<div class="section">
+  <h3>核心功能</h3>
+  <p><strong>在Windows Terminal右侧添加文件浏览器，方便快速浏览和打开文件</strong></p>
+</div>
+
+<div class="section">
+  <h3>✅ 已确定的设计要点</h3>
+
+  <div style="background: #1e3a1e; padding: 16px; margin: 12px 0; border-left: 4px solid #4ec9b0;">
+    <h4 style="margin-top: 0;">1. 触发方式</h4>
+    <p style="margin-bottom: 0;">🔘 <strong>工具栏按钮</strong> - 标题栏或标签栏旁边添加按钮，点击打开/关闭侧边栏</p>
+  </div>
+
+  <div style="background: #1e3a1e; padding: 16px; margin: 12px 0; border-left: 4px solid #4ec9b0;">
+    <h4 style="margin-top: 0;">2. 侧边栏位置</h4>
+    <p style="margin-bottom: 0;">🔘 <strong>右侧边栏</strong> - 终端在左，文件浏览器在右，不影响终端输入</p>
+  </div>
+
+  <div style="background: #1e3a1e; padding: 16px; margin: 12px 0; border-left: 4px solid #4ec9b0;">
+    <h4 style="margin-top: 0;">3. 显示方式</h4>
+    <p style="margin-bottom: 0;">🔘 <strong>平铺列表</strong> - 只显示当前目录文件，双击文件夹进入子目录</p>
+  </div>
+
+  <div style="background: #1e3a1e; padding: 16px; margin: 12px 0; border-left: 4px solid #4ec9b0;">
+    <h4 style="margin-top: 0;">4. 点击行为</h4>
+    <p style="margin-bottom: 0;">🔘 <strong>打开系统默认编辑器</strong> - 点击文件用系统默认程序打开</p>
+  </div>
+
+  <div style="background: #1e3a1e; padding: 16px; margin: 12px 0; border-left: 4px solid #4ec9b0;">
+    <h4 style="margin-top: 0;">5. 宽度控制</h4>
+    <p style="margin-bottom: 0;">🔘 <strong>自适应终端区域</strong> - 终端为主，侧边栏根据剩余空间自适应</p>
+  </div>
+
+  <div style="background: #1e3a1e; padding: 16px; margin: 12px 0; border-left: 4px solid #4ec9b0;">
+    <h4 style="margin-top: 0;">6. 显示信息</h4>
+    <p style="margin-bottom: 0;">🔘 <strong>文件名+图标+文件大小</strong> - 简洁实用的信息展示</p>
+  </div>
+</div>
+
+<div class="section" style="background: rgba(79, 193, 176, 0.1); padding: 16px; border-left: 4px solid #4ec9b0;">
+  <h3 style="margin-top: 0;">📐 界面布局示意</h3>
+  <div class="mockup" style="margin-top: 12px;">
+    <div style="background: #1e1e1e; padding: 8px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px; background: #2d2d30; margin-bottom: 2px;">
+        <div style="color: #ccc; font-size: 12px;">Windows Terminal - Tab 1</div>
+        <div style="display: flex; gap: 8px;">
+          <button style="padding: 4px 12px; background: #007acc; border: none; color: white; cursor: pointer; font-size: 11px;">📁 文件</button>
+          <span style="color: #888;">⊕ ⊟ ⊠</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 2px; height: 200px;">
+        <div style="flex: 1; background: #0c0c0c; padding: 12px; font-family: monospace; font-size: 11px; color: #00ff00;">
+          $ cd /home/project<br/>
+          $ ls -la<br/>
+          total 24<br/>
+          drwxr-xr-x 4 user user 4096<br/>
+          drwxr-xr-x 3 user user 4096<br/>
+          $ _
+        </div>
+        <div style="flex: 0 0 220px; background: #252526; padding: 12px; overflow: auto;">
+          <div style="font-weight: bold; color: #4ec9b0; margin-bottom: 12px; font-size: 12px;">📂 /home/project</div>
+          <div style="font-family: monospace; font-size: 11px; color: #ccc; line-height: 1.8;">
+            <div>📁 src <span style="float: right; color: #888;">-</span></div>
+            <div>📁 build <span style="float: right; color: #888;">-</span></div>
+            <div>📄 README.md <span style="float: right; color: #888;">2.5K</span></div>
+            <div>📄 config.json <span style="float: right; color: #888;">1.2K</span></div>
+            <div>📄 main.cpp <span style="float: right; color: #888;">15.8K</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 24px; text-align: center;">
+  <p style="font-size: 16px; margin-bottom: 16px;">看起来对不对？如果没问题，老王我就开始写详细设计文档了！</p>
+</div>

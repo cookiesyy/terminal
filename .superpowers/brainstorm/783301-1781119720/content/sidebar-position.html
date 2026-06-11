@@ -1,0 +1,96 @@
+<h2>侧边栏显示在哪边？</h2>
+<p class="subtitle">左边还是右边，这个得定好，不然布局就乱套了</p>
+
+<div class="options">
+  <div class="option" data-choice="left" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>左侧边栏</h3>
+      <p>传统文件管理器风格，左边导航右边内容</p>
+      <div class="mockup" style="margin-top: 12px; padding: 12px;">
+        <div style="display: flex; gap: 2px; height: 120px;">
+          <div style="flex: 0 0 180px; background: #2d2d30; border: 1px solid #3e3e42; display: flex; align-items: center; justify-content: center; color: #ccc; font-size: 12px;">
+            文件预览区
+          </div>
+          <div style="flex: 1; background: #1e1e1e; border: 1px solid #3e3e42; display: flex; align-items: center; justify-content: center; color: #ccc; font-size: 12px;">
+            终端区域
+          </div>
+        </div>
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>符合传统文件管理习惯</li>
+            <li>适合从左到右阅读习惯</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>可能遮挡终端左侧内容</li>
+            <li>与传统终端习惯不同</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="right" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>右侧边栏（推荐）</h3>
+      <p>VS Code风格，终端在左，预览在右</p>
+      <div class="mockup" style="margin-top: 12px; padding: 12px;">
+        <div style="display: flex; gap: 2px; height: 120px;">
+          <div style="flex: 1; background: #1e1e1e; border: 1px solid #3e3e42; display: flex; align-items: center; justify-content: center; color: #ccc; font-size: 12px;">
+            终端区域
+          </div>
+          <div style="flex: 0 0 180px; background: #2d2d30; border: 1px solid #3e3e42; display: flex; align-items: center; justify-content: center; color: #ccc; font-size: 12px;">
+            文件预览区
+          </div>
+        </div>
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>不影响终端输入区域</li>
+            <li>视线自然向右查看</li>
+            <li>现代IDE常见布局</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>与某些传统布局不同</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="config" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>可配置位置</h3>
+      <p>让用户自己选左边还是右边</p>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>最大灵活性</li>
+            <li>照顾不同用户习惯</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>开发成本高</li>
+            <li>增加配置复杂度</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

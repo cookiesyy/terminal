@@ -1,0 +1,72 @@
+<h2>文件浏览器的显示方式？</h2>
+<p class="subtitle">艹，现在老王我搞清楚了，你要的是文件树浏览器，不是预览！</p>
+
+<div class="options">
+  <div class="option" data-choice="tree" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>树形目录（推荐）</h3>
+      <p>VS Code风格，展开/折叠文件夹，点击文件打开</p>
+      <div class="mockup" style="margin-top: 12px; padding: 12px;">
+        <div style="background: #252526; padding: 12px; font-family: monospace; font-size: 11px; color: #ccc; max-width: 250px;">
+          <div style="margin-bottom: 4px;">📁 <span style="color: #4ec9b0;">▼ project</span></div>
+          <div style="margin-left: 16px; margin-bottom: 4px;">📁 <span style="color: #4ec9b0;">▼ src</span></div>
+          <div style="margin-left: 32px; margin-bottom: 4px;">📄 <span style="color: #569cd6;">main.cpp</span></div>
+          <div style="margin-left: 32px; margin-bottom: 4px;">📄 <span style="color: #569cd6;">utils.h</span></div>
+          <div style="margin-left: 16px; margin-bottom: 4px;">📁 <span style="color: #4ec9b0;">► build</span></div>
+          <div style="margin-left: 16px; margin-bottom: 4px;">📄 <span style="color: #569cd6;">README.md</span></div>
+          <div style="margin-left: 16px;">📄 <span style="color: #569cd6;">CMakeLists.txt</span></div>
+        </div>
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>一目了然，层级清晰</li>
+            <li>符合现代IDE习惯</li>
+            <li>支持快速展开/折叠</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>深层目录需要多次点击</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="flat" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>平铺列表</h3>
+      <p>只显示当前目录文件，双击进入子目录</p>
+      <div class="mockup" style="margin-top: 12px; padding: 12px;">
+        <div style="background: #252526; padding: 12px; font-family: monospace; font-size: 11px; color: #ccc; max-width: 250px;">
+          <div style="margin-bottom: 6px; color: #4ec9b0; font-weight: bold;">📂 /home/project</div>
+          <div style="margin-bottom: 4px;">📁 src/</div>
+          <div style="margin-bottom: 4px;">📁 build/</div>
+          <div style="margin-bottom: 4px;">📄 README.md</div>
+          <div>📄 CMakeLists.txt</div>
+        </div>
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>实现简单</li>
+            <li>适合浅层目录</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>缺点</h4>
+          <ul>
+            <li>无法看到整体结构</li>
+            <li>导航效率低</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

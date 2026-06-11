@@ -162,6 +162,7 @@ namespace winrt::TerminalApp::implementation
         winrt::hstring KeyboardServiceDisabledText();
 
         void IdentifyWindow();
+        void ToggleFileBrowser();
         void ActionSaved(winrt::hstring input, winrt::hstring name, winrt::hstring keyChord);
         void ActionSaveFailed(winrt::hstring message);
         void ShowTerminalWorkingDirectory();
