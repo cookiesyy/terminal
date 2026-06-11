@@ -4,6 +4,7 @@
 
 #include "pch.h"
 #include "TerminalPage.h"
+#include <shlobj.h>
 
 #include <TerminalCore/ControlKeyStates.hpp>
 #include <TerminalThemeHelpers.h>

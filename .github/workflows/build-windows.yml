@@ -37,5 +37,7 @@ jobs:
       with:
         name: WindowsTerminal-x64-Release
         path: |
-          bin/x64/Release/
-          !**/*.pdb
+          bin/x64/Release/*.exe
+          bin/x64/Release/*.dll
+          src/cascadia/CascadiaPackage/AppPackages/**/*.msix
+          src/cascadia/CascadiaPackage/AppPackages/**/*.msixbundle

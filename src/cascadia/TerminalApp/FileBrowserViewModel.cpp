@@ -12,7 +12,7 @@ namespace winrt::TerminalApp::implementation
     {
         if (!isDir)
         {
-            _sizeDisplay = FileBrowserViewModel::_FormatFileSize(size);
+            _sizeDisplay = FormatFileSize(size);
         }
         else
         {
@@ -24,30 +24,6 @@ namespace winrt::TerminalApp::implementation
     {
         _fileList = winrt::single_threaded_observable_vector<TerminalApp::FileItem>();
         _currentPath = L"";
-    }
-
-    winrt::hstring FileBrowserViewModel::_FormatFileSize(uint64_t bytes)
-    {
-        const wchar_t* units[] = { L"B", L"KB", L"MB", L"GB", L"TB" };
-        int unitIndex = 0;
-        double size = static_cast<double>(bytes);
-
-        while (size >= 1024.0 && unitIndex < 4)
-        {
-            size /= 1024.0;
-            unitIndex++;
-        }
-
-        wchar_t buffer[32];
-        if (unitIndex == 0)
-        {
-            swprintf_s(buffer, 32, L"%d%s", static_cast<int>(size), units[unitIndex]);
-        }
-        else
-        {
-            swprintf_s(buffer, 32, L"%.1f%s", size, units[unitIndex]);
-        }
-        return winrt::hstring{ buffer };
     }
 
     std::vector<TerminalApp::FileItem> FileBrowserViewModel::_LoadDirectoryImpl(const std::wstring& path)

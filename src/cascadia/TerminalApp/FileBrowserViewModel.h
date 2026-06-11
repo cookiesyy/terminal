@@ -5,6 +5,24 @@
 
 namespace winrt::TerminalApp::implementation
 {
+    // Helper function for formatting file sizes
+    inline winrt::hstring FormatFileSize(uint64_t bytes)
+    {
+        const wchar_t* units[] = { L"B", L"KB", L"MB", L"GB", L"TB" };
+        int unitIndex = 0;
+        double size = static_cast<double>(bytes);
+
+        while (size >= 1024.0 && unitIndex < 4)
+        {
+            size /= 1024.0;
+            unitIndex++;
+        }
+
+        wchar_t buffer[64];
+        swprintf_s(buffer, L"%.2f %s", size, units[unitIndex]);
+        return winrt::hstring{ buffer };
+    }
+
     struct FileItem : FileItemT<FileItem>
     {
         FileItem(const winrt::hstring& name, const winrt::hstring& path, bool isDir, uint64_t size);
@@ -39,6 +57,5 @@ namespace winrt::TerminalApp::implementation
         winrt::hstring _currentPath;
 
         std::vector<TerminalApp::FileItem> _LoadDirectoryImpl(const std::wstring& path);
-        static winrt::hstring _FormatFileSize(uint64_t bytes);
     };
 }
