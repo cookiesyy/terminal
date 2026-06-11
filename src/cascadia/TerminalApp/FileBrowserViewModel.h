@@ -59,3 +59,8 @@ namespace winrt::TerminalApp::implementation
         std::vector<TerminalApp::FileItem> _LoadDirectoryImpl(const std::wstring& path);
     };
 }
+
+namespace winrt::TerminalApp::factory_implementation
+{
+    BASIC_FACTORY(FileBrowserViewModel);
+}
