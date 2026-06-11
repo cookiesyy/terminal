@@ -86,7 +86,7 @@ namespace winrt::TerminalApp::implementation
 
         if (!ShellExecuteEx(&sei))
         {
-            DWORD error = GetLastError();
+            // Failed to open file
         }
     }
 
